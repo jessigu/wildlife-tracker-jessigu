@@ -1,0 +1,32 @@
+<h4><%= @animal.name %> Specs</h4>
+<br />
+
+<p>Animal Name: <%= @animal.name %></p>
+<p>Animal Latin Name: <%= @animal.latin_name %></p>
+<p>Kingdom: <%= @animal.kingdom %></p>        
+<hr>
+
+<h4><%= @animal.name %> Sightings - Total <%= @animal.sightings.count %></h4>
+<br />
+
+<ul>
+  <% @animal.sightings.each do |sighting| %>
+    <p>Sighting Date: <%= sighting.date %></p>
+    <p>Sighting Time: <%= sighting.time %></p>
+    <p>Sighting Latitude & Longitude: <%= sighting.latitude %> - <%= sighting.longitude %></p> 
+    <p>Sighting Region: <%= sighting.region %></p> 
+    <div class="button"><%= link_to 'Edit This Sighting', edit_sighting_path(sighting) %></div>
+    <hr>
+  <% end %>
+</ul>
+
+
+<h5>Edit <%= @animal.name %>:</h5>
+<a><%= link_to "Edit Animal", edit_animal_path(@animal) %></a>
+<hr>
+
+<h5>Add <%= @animal.name %> Sighting:</h5>
+<a><%= link_to 'New Animal Sighting', new_sighting_path(animal_id: @animal.id) %></a>
+<hr>
+
+

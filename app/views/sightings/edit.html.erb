@@ -1,0 +1,39 @@
+<h4>Edit Sighting:</h4>
+<br />
+
+<%= form_for @sighting do |f| %>
+    <%= f.hidden_field :animal_id %>
+    <%= f.label :date %>
+    <%= f.text_field :date %><br />
+    
+    <%= f.label :time %>
+    <%= f.text_field :time %><br />
+    
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %><br />
+    
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %><br />
+    
+    <%= f.label :region %>
+    <%= f.text_field :region %><br />
+    
+    <%= f.submit %>
+<% end %><br />
+
+<% if @sighting.errors %>
+    <ul>
+        <% @sighting.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+
+<hr>
+<h5>Delete Sighting:</h5>
+<a><%= link_to "Delete Sighting", sighting_path(@sighting), method: :delete, data: {confirm: 'Are you totally totally sure?'}%></a>
+
+
+
+

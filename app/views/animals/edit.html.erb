@@ -1,0 +1,31 @@
+<h4>Edit <%= @animal.name %> by completing this form: </h4>
+<br />
+
+<%= form_for @animal do |e| %>
+    <%= e.label :name %>
+    <%= e.text_field :name %><br />
+    
+    <%= e.label :latin_name %>
+    <%= e.text_field :latin_name %><br />
+    
+    <%= e.label :kingdom %>
+    <%= e.text_field :kingdom %><br />
+    
+    <%= e.submit %>
+<% end %>
+
+<% if @animal.errors %>
+    <ul>
+        <% @animal.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<hr>
+<h5>Click here to delete <%= @animal.name %>:</h5>
+<a><%= link_to "Delete Animal", animal_path(@animal), method: :delete, data: {confirm: 'Are you totally totally sure?'}%></a>
+
+
+
+

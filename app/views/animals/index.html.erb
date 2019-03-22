@@ -1,0 +1,20 @@
+<h1>Welcome to Forest Park Ranger Services</h1>
+<hr>
+
+<h4>Animal Database</h4>
+<br />
+
+<ol>
+    <% @animals.each do |animal| %>
+        <span><%= animal.name %>
+        <a class="button"><%= link_to "Show More", animal_path(animal) %></a></span>
+        <hr>
+    <% end %>
+</ol>
+<br />
+<h5>Click below to add a new animal to the database: </h5>
+<a><%= link_to "Add Animal", new_animal_path %></a>
+
+
+
+       

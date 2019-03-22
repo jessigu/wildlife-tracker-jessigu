@@ -1,0 +1,31 @@
+<h4>Add New Sighting</h4>
+<hr>
+<p>Add a new sighting to the database by completing this form. All fields required.</p>
+
+<%= form_for @sighting do |f| %>
+    <%= f.hidden_field :animal_id %>
+    <%= f.label :date %>
+    <%= f.text_field :date %><br />
+    
+    <%= f.label :time %>
+    <%= f.text_field :time %><br />
+    
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %><br />
+    
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %><br />
+    
+    <%= f.label :region %>
+    <%= f.text_field :region %><br />
+    
+    <%= f.submit %>
+<% end %><br />
+
+<% if @sighting.errors %>
+    <ul>
+        <% @sighting.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
