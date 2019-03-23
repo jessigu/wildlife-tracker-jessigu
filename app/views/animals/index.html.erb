@@ -6,15 +6,11 @@
 
 <ol>
     <% @animals.each do |animal| %>
-        <span><%= animal.name %>
-        <a class="button"><%= link_to "Show More", animal_path(animal) %></a></span>
-        <hr>
+        <div>
+            <a><%= link_to animal.name + ": Detailed Specs", animal_path(animal), :class => "btn btn-success" %></a>
+        </div><br />
     <% end %>
 </ol>
 <br />
 <h5>Click below to add a new animal to the database: </h5>
-<a><%= link_to "Add Animal", new_animal_path %></a>
-
-
-
-       
+<a><%= link_to "Add New Animal", new_animal_path, :class => "btn btn-success" %></a>

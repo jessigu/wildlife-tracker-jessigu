@@ -1,3 +1,9 @@
+Rails & ERB.
+Completed on AWS Cloud 9.
+Rspec testing for validation included. 
+Practice with CRUD and REST concepts. 
+
+Assignment:
 Wildlife Tracker with Nested Resources
 The Forest Service is considering a proposal from a timber company to clear-cut an old-growth forest of virgin Douglas fir just outside of Portland. Before they give the go-ahead, they need to do an environmental impact study. They've asked you and your pair to build an app so that the rangers can report wildlife sightings.
 

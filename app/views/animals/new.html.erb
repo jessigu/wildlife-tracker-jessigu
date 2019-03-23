@@ -1,7 +1,6 @@
 <h4>Add New Animal</h4>
-<hr>
 <p>Add a new animal to the database by completing this form. All fields required.</p>
-
+<hr>
 <%= form_for @animal do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br />
@@ -9,10 +8,23 @@
     <%= f.label :latin_name %>
     <%= f.text_field :latin_name %><br />
     
-    <%= f.label :kingdom %>
-    <%= f.text_field :kingdom %><br />
+    <p>Kingdom (choose one):</p>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.radio_button :kingdom, 'Mammal', :checked =>true %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= label :kingdom, 'Mammal' %></br>
     
-    <%= f.submit %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.radio_button :kingdom, 'Bird' %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= label :kingdom, 'Bird' %></br>
+    
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.radio_button :kingdom, 'Fish' %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= label :kingdom, 'Fish' %></br>
+    
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.radio_button :kingdom, 'Reptile' %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= label :kingdom, 'Reptile' %></br>
+    
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.radio_button :kingdom, 'Amphibian' %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= label :kingdom, 'Amphibian' %></br></br>
+    
+    &nbsp&nbsp&nbsp&nbsp<%= f.submit 'Submit', :class => "btn btn-success"%>
 <% end %><br />
 
 <% if @animal.errors %>

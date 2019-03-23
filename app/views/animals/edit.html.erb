@@ -1,18 +1,32 @@
-<h4>Edit <%= @animal.name %> by completing this form: </h4>
-<br />
+<h4>Edit <%= @animal.name %></h4>
+<p>All fields are required.</p>
+<hr>
 
-<%= form_for @animal do |e| %>
-    <%= e.label :name %>
-    <%= e.text_field :name %><br />
+<%= form_for @animal do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br />
     
-    <%= e.label :latin_name %>
-    <%= e.text_field :latin_name %><br />
+    <%= f.label :latin_name %>
+    <%= f.text_field :latin_name %><br />
     
-    <%= e.label :kingdom %>
-    <%= e.text_field :kingdom %><br />
+    <p>Kingdom (choose one):</p>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.radio_button :kingdom, 'Mammal', :checked =>true %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= label :kingdom, 'Mammal' %></br>
     
-    <%= e.submit %>
-<% end %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.radio_button :kingdom, 'Bird' %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= label :kingdom, 'Bird' %></br>
+    
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.radio_button :kingdom, 'Fish' %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= label :kingdom, 'Fish' %></br>
+    
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.radio_button :kingdom, 'Reptile' %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= label :kingdom, 'Reptile' %></br>
+    
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= f.radio_button :kingdom, 'Amphibian' %>
+    &nbsp&nbsp&nbsp&nbsp&nbsp<%= label :kingdom, 'Amphibian' %></br></br>
+    
+    &nbsp&nbsp&nbsp&nbsp<%= f.submit 'Submit', :class => "btn btn-success"%>
+<% end %><br />
 
 <% if @animal.errors %>
     <ul>
@@ -23,8 +37,7 @@
 <% end %>
 
 <hr>
-<h5>Click here to delete <%= @animal.name %>:</h5>
-<a><%= link_to "Delete Animal", animal_path(@animal), method: :delete, data: {confirm: 'Are you totally totally sure?'}%></a>
+<a><%= link_to @animal.name + ": Delete", animal_path(@animal), :class => "btn btn-warning", method: :delete, data: {confirm: 'Are you totally totally sure?'}%></a>
 
 
 

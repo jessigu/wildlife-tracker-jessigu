@@ -17,3 +17,17 @@
 body {
     padding: 20px;
 }
+h1 {
+    text-align: center;
+}
+
+
+
+.background {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/cf/Magical_forest.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 100%;
+    width: 100%;
+    /*opacity: 0.74;*/
+}
