@@ -3,11 +3,12 @@
 
 <p>Animal Name: <%= @animal.name %></p>
 <p>Animal Latin Name: <%= @animal.latin_name %></p>
-<p>Kingdom: <%= @animal.kingdom %></p>        
+<p>Kingdom: <%= @animal.kingdom %></p>
+<a><%= link_to @animal.name + ": Edit", edit_animal_path(@animal), :class => "btn btn-success" %></a>
 <hr>
 
-<h4><%= @animal.name %> Sightings - Total <%= @animal.sightings.count %></h4>
-<br />
+<h4>Total <%= @animal.name %> Sightings: <%= @animal.sightings.count %></h4>
+<a><%= link_to @animal.name + ': Add Sighting', new_sighting_path(animal_id: @animal.id), :class => "btn btn-success" %></a><br /><br />
 
 <ul>
   <% @animal.sightings.each do |sighting| %>
@@ -15,18 +16,8 @@
     <p>Sighting Time: <%= sighting.time %></p>
     <p>Sighting Latitude & Longitude: <%= sighting.latitude %> - <%= sighting.longitude %></p> 
     <p>Sighting Region: <%= sighting.region %></p> 
-    <div class="button"><%= link_to 'Edit This Sighting', edit_sighting_path(sighting) %></div>
+    <div class><%= link_to 'Edit This Sighting', edit_sighting_path(sighting), :class => "btn btn-success" %></div>
     <hr>
   <% end %>
 </ul>
-
-
-<h5>Edit <%= @animal.name %>:</h5>
-<a><%= link_to "Edit Animal", edit_animal_path(@animal) %></a>
-<hr>
-
-<h5>Add <%= @animal.name %> Sighting:</h5>
-<a><%= link_to 'New Animal Sighting', new_sighting_path(animal_id: @animal.id) %></a>
-<hr>
-
 

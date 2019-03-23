@@ -1,6 +1,6 @@
-<h4>Add New Sighting</h4>
-<hr>
+<h4>Report New <%= @animal.name %> Sighting</h4>
 <p>Add a new sighting to the database by completing this form. All fields required.</p>
+<hr>
 
 <%= form_for @sighting do |f| %>
     <%= f.hidden_field :animal_id %>
@@ -16,10 +16,10 @@
     <%= f.label :longitude %>
     <%= f.text_field :longitude %><br />
     
-    <%= f.label :region %>
-    <%= f.text_field :region %><br />
+    <%= f.label :region %>&nbsp&nbsp
+    <%= f.select :region, (["North of 13", "South of 13"]) %><br /><br />
     
-    <%= f.submit %>
+    &nbsp&nbsp&nbsp&nbsp<%= f.submit 'Submit', :class => "btn btn-success"%>
 <% end %><br />
 
 <% if @sighting.errors %>

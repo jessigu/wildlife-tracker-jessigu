@@ -2,6 +2,7 @@ class SightingsController < ApplicationController
     
     def new
         animal = Animal.find(params[:animal_id])
+        @animal = animal
         @sighting = animal.sightings.new
     end
     

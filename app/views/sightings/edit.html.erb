@@ -1,5 +1,6 @@
 <h4>Edit Sighting:</h4>
-<br />
+<p>All fields are required.</p>
+<hr>
 
 <%= form_for @sighting do |f| %>
     <%= f.hidden_field :animal_id %>
@@ -15,11 +16,11 @@
     <%= f.label :longitude %>
     <%= f.text_field :longitude %><br />
     
-    <%= f.label :region %>
-    <%= f.text_field :region %><br />
+    <%= f.label :region %>&nbsp&nbsp
+    <%= f.select :region, (["North of 13", "South of 13"]) %><br /><br />
     
-    <%= f.submit %>
-<% end %><br />
+    &nbsp&nbsp&nbsp&nbsp<%= f.submit 'Submit', :class => "btn btn-success"%>
+<% end %><hr>
 
 <% if @sighting.errors %>
     <ul>
@@ -29,10 +30,7 @@
     </ul>
 <% end %>
 
-
-<hr>
-<h5>Delete Sighting:</h5>
-<a><%= link_to "Delete Sighting", sighting_path(@sighting), method: :delete, data: {confirm: 'Are you totally totally sure?'}%></a>
+<a><%= link_to "Delete Sighting", sighting_path(@sighting), :class => "btn btn-warning", method: :delete, data: {confirm: 'Are you totally totally sure?'}%></a>
 
 
 
