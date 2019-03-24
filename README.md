@@ -1,7 +1,9 @@
-Rails & ERB.
 Completed on AWS Cloud 9.
-Rspec testing for validation included. 
+Rspec testing for model (validation) included. 
 Practice with CRUD and REST concepts. 
+
+*Future CSS work: background-image & gradient. Upload correct jpg file. Adjust buttons, font, text align. Border around specs, sighting?
+
 
 Assignment:
 Wildlife Tracker with Nested Resources
