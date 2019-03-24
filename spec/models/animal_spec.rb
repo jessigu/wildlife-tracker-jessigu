@@ -5,6 +5,12 @@ RSpec.describe Animal, type: :model do
   it "should validate common name" do
       expect(animal.valid?).to be false
       expect(animal.errors.messages[:name].nil?).to be false
+      
+    #   if animal is not valid then there should be error messages.
+    #       error messages.nil? = true would mean there are no error messages
+    #       BUT error.messages.nil? = false 
+    #       so there are error messages. just like the animal isnt valid. 
+    #       because when i created A.new, i didnt give a name
   end
   it "should validate common name is unique" do
       animal_two = Animal.new(:name=>"animal")
