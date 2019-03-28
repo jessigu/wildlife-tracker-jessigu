@@ -2,25 +2,8 @@
 <p>All fields are required.</p>
 <hr>
 
-<%= form_for @sighting do |f| %>
-    <%= f.hidden_field :animal_id %>
-    <%= f.label :date %>
-    <%= f.text_field :date %><br />
-    
-    <%= f.label :time %>
-    <%= f.text_field :time %><br />
-    
-    <%= f.label :latitude %>
-    <%= f.text_field :latitude %><br />
-    
-    <%= f.label :longitude %>
-    <%= f.text_field :longitude %><br />
-    
-    <%= f.label :region %>&nbsp&nbsp
-    <%= f.select :region, (["North of 13", "South of 13"]) %><br /><br />
-    
-    &nbsp&nbsp&nbsp&nbsp<%= f.submit 'Submit', :class => "btn btn-success"%>
-<% end %><hr>
+<%= render "layouts/sightings_form" %>
+<hr>
 
 <% if @sighting.errors %>
     <ul>
